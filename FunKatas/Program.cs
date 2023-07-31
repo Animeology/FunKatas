@@ -9,8 +9,11 @@
             //FizzBuzz fizzBuzz = new FizzBuzz();
             //fizzBuzz.FizzBuzzGame();
 
-            Fibonacci fibonacci = new Fibonacci();
-            fibonacci.PrintFibonacci();
+            //Fibonacci fibonacci = new Fibonacci();
+            //fibonacci.PrintFibonacci();
+
+            CheckoutKata checkout = new CheckoutKata();
+            checkout.Checkout();
         }
     }
 }
