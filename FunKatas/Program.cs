@@ -6,8 +6,11 @@
     {
         static void Main(string[] args) 
         {
-            FizzBuzz fizzBuzz = new FizzBuzz();
-            fizzBuzz.FizzBuzzGame();
+            //FizzBuzz fizzBuzz = new FizzBuzz();
+            //fizzBuzz.FizzBuzzGame();
+
+            Fibonacci fibonacci = new Fibonacci();
+            fibonacci.PrintFibonacci();
         }
     }
 }
