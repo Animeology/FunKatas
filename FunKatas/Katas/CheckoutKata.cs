@@ -2,10 +2,10 @@
 {
     public class CheckoutKata
     {
-        int itemA = 50;
-        int itemB = 30;
-        int itemC = 20;
-        int itemD = 15;
+        int itemAPrice = 50;
+        int itemBPrice = 30;
+        int itemCPrice = 20;
+        int itemDPrice = 15;
 
         int itemACount = 0;
         int itemBCount = 0;
@@ -58,7 +58,7 @@
                     case 0:
                         ShoppingCart();
                         Console.Write("Total: ");
-                        Console.WriteLine(CalculateTotal (
+                        Console.WriteLine(CalculateTotal(
                             itemACount,
                             itemBCount, 
                             itemCCount, 
@@ -98,13 +98,16 @@
         {
             int total;
 
-            total = (itemA * a) + (itemB * b) + (itemC * c) + (itemD * d);
+            total = (itemAPrice * a) + (itemBPrice * b) + (itemCPrice * c) + (itemDPrice * d);
 
-            if((a % OFFER_ITEM_A) == 0)
+            int totalACount =+ a;
+            int totalBCount =+ b;
+
+            if((totalACount % OFFER_ITEM_A) == 0)
             {
                 total -= ITEM_A_DISCOUNT;
             }
-            else if((b % OFFER_ITEM_B) == 0)
+            else if((totalBCount % OFFER_ITEM_B) == 0)
             {
                 total -= ITEM_B_DISCOUNT;
             }
