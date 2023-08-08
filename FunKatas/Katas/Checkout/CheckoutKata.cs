@@ -14,7 +14,9 @@
         Dictionary<char, Offer> offers = new Dictionary<char, Offer>
         {
             {'A', new Offer{Discount = ITEM_A_DISCOUNT, NumberOfItems = OFFER_ITEM_A} },
-            {'B', new Offer{Discount = ITEM_B_DISCOUNT, NumberOfItems = OFFER_ITEM_B } }
+            {'B', new Offer{Discount = ITEM_B_DISCOUNT, NumberOfItems = OFFER_ITEM_B } },
+            {'C', new Offer{Discount = ITEM_C_DISCOUNT, NumberOfItems = OFFER_ITEM_C} },
+            {'D', new Offer{Discount = ITEM_D_DISCOUNT, NumberOfItems= OFFER_ITEM_D} }
         };
 
         public void Checkout()
@@ -48,7 +50,7 @@
         {
             char choice = ' ';
             do
-            {
+            {                
                 Console.WriteLine("Select your items");
                 Console.WriteLine("A");
                 Console.WriteLine("B");
@@ -101,17 +103,19 @@
         {
             Console.Write("A: ");
             Console.Write("50");
-            Console.WriteLine(" Discount Offer: 3 for 130");
+            Console.WriteLine(" One Time Discount Offer: 3 for 130");
 
             Console.Write("B: ");
             Console.Write("30");
-            Console.WriteLine(" Discount Offer: 2 for 45");
+            Console.WriteLine(" One Time Discount Offer: 2 for 45");
 
             Console.Write("C: ");
-            Console.WriteLine("20");
+            Console.Write("20");
+            Console.WriteLine(" One Time Discount Offer: 4 for 65");
 
             Console.Write("D: ");
-            Console.WriteLine("15");
+            Console.Write("15");
+            Console.WriteLine(" One Time Discount Offer: 3 for 35");
 
             Console.WriteLine();
         }
@@ -128,8 +132,12 @@
 
         const int OFFER_ITEM_A = 3;
         const int OFFER_ITEM_B = 2;
+        const int OFFER_ITEM_C = 4;
+        const int OFFER_ITEM_D = 3;
 
         const int ITEM_A_DISCOUNT = 20;
         const int ITEM_B_DISCOUNT = 15;
+        const int ITEM_C_DISCOUNT = 15;
+        const int ITEM_D_DISCOUNT = 10;
     }
 }
