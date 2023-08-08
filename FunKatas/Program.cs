@@ -1,5 +1,6 @@
 ﻿namespace FunKatas
 {
+    using FunKatas.Katas.Checkout;
     using Katas;
 
     public class Program
