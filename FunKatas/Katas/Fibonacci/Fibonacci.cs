@@ -1,4 +1,4 @@
-﻿namespace FunKatas.Katas
+﻿namespace FunKatas.Katas.Fibonacci
 {
     public class Fibonacci
     {

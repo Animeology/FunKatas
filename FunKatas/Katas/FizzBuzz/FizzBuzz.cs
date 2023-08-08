@@ -1,4 +1,4 @@
-﻿namespace FunKatas.Katas
+﻿namespace FunKatas.Katas.FizzBuzz
 {
     public class FizzBuzz
     {
@@ -7,19 +7,19 @@
             Console.Write("Enter a number: ");
             int count = int.Parse(Console.ReadLine()!);
 
-            for(int i = 1; i <= count; i++)
+            for (int i = 1; i <= count; i++)
             {
-                if(((i % DIVISIBLE_BY_THREE) == 0) && ((i % DIVISIBLE_BY_FIVE) == 0))
+                if (i % DIVISIBLE_BY_THREE == 0 && i % DIVISIBLE_BY_FIVE == 0)
                 {
                     Console.WriteLine($"{i} -> fizzbuzz");
                 }
 
-                else if ((i % DIVISIBLE_BY_THREE) == 0)
+                else if (i % DIVISIBLE_BY_THREE == 0)
                 {
                     Console.WriteLine($"{i} -> fizz");
                 }
 
-                else if((i % DIVISIBLE_BY_FIVE) == 0)
+                else if (i % DIVISIBLE_BY_FIVE == 0)
                 {
                     Console.WriteLine($"{i} -> buzz");
                 }
