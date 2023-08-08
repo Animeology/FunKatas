@@ -2,7 +2,7 @@
 {
     public class CheckoutKata
     {
-        int Total = 0;
+        public int Total { get; private set; }
 
         int itemACount;
         int itemBCount;
@@ -28,7 +28,7 @@
             itemCount[item]++;
             Total += prices[item];
 
-            if(IsOffer(item) && OfferNumber(item))
+            if (IsOffer(item) && OfferNumber(item))
             {
                 Total -= offers[item].Discount;
             }
@@ -87,14 +87,14 @@
                         break;
                     case '0':
                         ShoppingCart();
-                        Console.WriteLine($"Total: {Total}");                       
+                        Console.WriteLine($"Total: {Total}");
                         break;
                     default:
                         Console.WriteLine("Not a valid item");
                         break;
                 }
 
-            } while (choice != 0);
+            } while (choice != '0');
         }
 
         void Menu()
