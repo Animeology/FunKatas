@@ -1,7 +1,8 @@
 ﻿namespace FunKatas
 {
-    using FunKatas.Katas.Checkout;
-    using Katas;
+    using Katas.Checkout;
+    using Katas.Fibonacci;
+    using Katas.FizzBuzz;
 
     public class Program
     {
