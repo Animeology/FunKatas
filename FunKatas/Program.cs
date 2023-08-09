@@ -14,8 +14,8 @@
             //Fibonacci fibonacci = new Fibonacci();
             //fibonacci.PrintFibonacci();
 
-            CheckoutKata checkout = new CheckoutKata();
-            checkout.Checkout();
+            //CheckoutKata checkout = new CheckoutKata();
+            //checkout.Checkout();
         }
     }
 }
