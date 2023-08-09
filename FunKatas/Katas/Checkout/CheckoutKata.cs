@@ -1,5 +1,8 @@
 ﻿namespace FunKatas.Katas.Checkout
 {
+    using FunKatas.KataTest.CheckoutTests;
+    using KataTest;
+
     public class CheckoutKata
     {
         public int Total { get; private set; }
@@ -21,11 +24,23 @@
 
         public void Checkout()
         {
+            CheckoutTests tests = new CheckoutTests();
+            tests.NoItemsScanned_ReturnsZero();
+            tests.ItemAScanned_ReturnItemAPrice();
+            tests.ItemBScanned_ReturnItemBPrice();
+            tests.ItemCScanned_ReturnItemCPrice();
+            tests.ItemDScanned_ReturnItemDPrice();
+            tests.MultipleItemsScanned_ReturnCorrectPrice();
+            tests.ItemADiscount_ReturnsCorrectDiscountPrice();
+            tests.ItemBDiscount_ReturnsCorrectDiscountPrice();
+            tests.ItemCDiscount_ReturnsCorrectDiscountPrice();
+            tests.ItemDDiscount_ReturnsCorrectDiscountPrice();
+
             Menu();
             Selection();
         }
 
-        void Scan(char item)
+        public void Scan(char item)
         {
             itemCount[item]++;
             Total += prices[item];
