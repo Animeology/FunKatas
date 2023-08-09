@@ -1,13 +1,17 @@
 ﻿namespace FunKatas.Katas.Fibonacci
 {
+    using FunKatas.KataTest.FibonacciTests;    
+
     public class Fibonacci
     {
         public void PrintFibonacci()
         {
+            FibonacciTests tests = new FibonacciTests();
+            tests.Fibonacci_ForNumber10();
             Console.WriteLine(FibonacciKata(10));
         }
 
-        int FibonacciKata(int num)
+        public int FibonacciKata(int num)
         {
             if (num == 0)
             {
