@@ -21,19 +21,35 @@ namespace FunKatas.Katas.String_Calculator
         public int Add(string nums)
         {
             int sum = 0;
+            string[] numbers = nums.Split(DELIMITER.ToCharArray());   
 
-            MatchCollection matches = Regex.Matches(nums, @"\d+");
-
-            foreach (Match match in matches)
+            if(IsEmptyString(nums))
             {
-                int number;
-                if (int.TryParse(match.Value, out number))
+                return sum;
+            }
+
+            if(HasDelimiter(nums))
+            {
+                foreach (var num in numbers)
                 {
-                    sum += number;
+                    sum += int.Parse(num);
                 }
             }
+
             Console.WriteLine($"Sum: {sum}");
             return sum;
         }
+
+        bool IsEmptyString(string input)
+        {
+            return input.Length == 0;
+        }
+
+        bool HasDelimiter(string input)
+        {
+            return input.IndexOf(DELIMITER) > 0;
+        }
+
+        const string DELIMITER = ",";
     }
 }
