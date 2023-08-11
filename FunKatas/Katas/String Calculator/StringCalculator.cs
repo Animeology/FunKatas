@@ -10,6 +10,7 @@ namespace FunKatas.Katas.String_Calculator
         {
             StringCalculatorTests tests = new StringCalculatorTests();
             tests.EmptyString_ReturnsZero();
+            //tests.OneTwoThree_ReturnsSix();
 
             Console.Write("String input: ");
             string input = Console.ReadLine()!;
@@ -33,8 +34,17 @@ namespace FunKatas.Katas.String_Calculator
                 foreach (var num in numbers)
                 {
                     sum += int.Parse(num);
+                    if(!int.TryParse(num, out int parsedNum))
+                    {
+                        throw new Exception($"Invalid number format: {nums}");
+                    }
+                    if(parsedNum < 0)
+                    {
+                        throw new Exception($"Negatives not allowed: {nums}");
+                    }
                 }
             }
+
 
             Console.WriteLine($"Sum: {sum}");
             return sum;
