@@ -23,7 +23,6 @@
 
         void FrameAttempts()
         {
-
             for(int i = 1; i <= TOTAL_FRAMES; i++)
             {                
                 Random random = new Random();
