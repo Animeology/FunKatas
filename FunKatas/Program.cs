@@ -4,6 +4,7 @@
     using Katas.Fibonacci;
     using Katas.FizzBuzz;
     using Katas.String_Calculator;
+    using Katas.BowlingGame;
 
     public class Program
     {
@@ -18,8 +19,11 @@
             //CheckoutKata checkout = new CheckoutKata();
             //checkout.Checkout();
 
-            StringCalculator calculator = new StringCalculator();
-            calculator.StartCalculator();
+            //StringCalculator calculator = new StringCalculator();
+            //calculator.StartCalculator();
+
+            BowlingGame game = new BowlingGame();
+            game.Bowling();
         }
     }
 }
