@@ -3,12 +3,13 @@
     public class BowlingGame
     {
         int Attempts;
-
         int KnockedDownPins;
+        int LeftoverPins = TOTAL_PINS;
+        int Score;
 
         public void Bowling()
         {
-            FrameAttempts();
+            BowlingAttempts();
         }
 
         bool IsSpare()
@@ -21,42 +22,38 @@
             return Attempts == 1 && KnockedDownPins == TOTAL_PINS ? true : false;
         }
 
-        void FrameAttempts()
+        void BowlingAttempts()
         {
-            for(int i = 1; i <= TOTAL_FRAMES; i++)
-            {                
+            for (int i = 1; i <= TOTAL_FRAMES; i++)
+            {
                 Random random = new Random();
-                KnockedDownPins = random.Next(EMPTY_FRAME, TOTAL_PINS);
-                int leftoverPins = 10;
+                KnockedDownPins = random.Next(EMPTY_FRAME, Math.Min(LeftoverPins, TOTAL_PINS));
 
-                leftoverPins -= KnockedDownPins;
+                LeftoverPins = LeftoverPins - KnockedDownPins;
                 Attempts++;
 
-                if (KnockedDownPins == TOTAL_PINS)
+                if (LeftoverPins == EMPTY_FRAME)
                 {
-                    KnockedDownPins = 0;
-                    leftoverPins = 10;
+                    LeftoverPins = TOTAL_PINS;
                     Attempts = 0;
+                    Console.WriteLine("No more pins");
                 }
 
-                if (IsSpare())
+                if (IsStrike())
+                {
+                    Console.WriteLine("It's a STRIKE!!!");
+                }
+                else if (IsSpare())
                 {
                     Console.WriteLine("Spare");
                 }
 
-                if(IsStrike())
-                {
-                    Console.WriteLine("It's a STRIKE!!!");
-                }
-
-                Console.WriteLine($"Frame {i}: Knocked Pins: {KnockedDownPins} Pins Left: {leftoverPins}");
+                Console.WriteLine($"Frame {i}: Knocked Pins: {KnockedDownPins} Pins Left: {LeftoverPins}");
             }
         }
 
         const int EMPTY_FRAME = 0;
-
-        const int TOTAL_PINS = 10;        
-
+        const int TOTAL_PINS = 10;
         const int TOTAL_FRAMES = 10;
     }
 }
