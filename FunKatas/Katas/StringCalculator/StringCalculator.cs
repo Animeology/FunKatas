@@ -1,6 +1,6 @@
 ﻿using System.Text.RegularExpressions;
 
-namespace FunKatas.Katas.String_Calculator
+namespace FunKatas.Katas.StringCalculator
 {
     using FunKatas.KataTest.StringCalculatorTests;
 
