@@ -1,5 +1,7 @@
 ﻿namespace FunKatas.Katas.BowlingGame
 {
+    using FunKatas.KataTest.BowlingGameTests;
+
     public class BowlingGame
     {
         int Attempts;
@@ -9,32 +11,40 @@
 
         public void Bowling()
         {
-            BowlingAttempts();
+            BowlingGameTests tests = new BowlingGameTests();
+            tests.HitNoPins_ReturnsZero();
+
+            LoopRolls();
             DisplayScore();
         }
 
-        public void BowlingAttempts()
+        public void BowlingAttempt()
         {
-            for (int i = 1; i <= TOTAL_FRAMES; i++)
+            if (LeftoverPins == EMPTY_FRAME)
             {
-                if (LeftoverPins == EMPTY_FRAME)
-                {
-                    LeftoverPins = TOTAL_PINS;
-                    KnockedDownPins = 0;
-                    Attempts = 0;
-                    Console.WriteLine("No more pins, Resetting frame");
-                }
+                LeftoverPins = TOTAL_PINS;
+                KnockedDownPins = 0;
+                Attempts = 0;
+                Console.WriteLine("No more pins, Resetting frame");
+            }
 
-                Random random = new Random();
-                KnockedDownPins = random.Next(EMPTY_FRAME, Math.Min(LeftoverPins, TOTAL_PINS) + 1);
+            Random random = new Random();
+            KnockedDownPins = random.Next(EMPTY_FRAME, Math.Min(LeftoverPins, TOTAL_PINS) + 1);
 
-                LeftoverPins -= KnockedDownPins;
-                Attempts++;
+            LeftoverPins -= KnockedDownPins;
+            Attempts++;
 
-                Score += KnockedDownPins;
+            Score += KnockedDownPins;
 
+            CheckerForCertainRolls();
+        }
+
+        void LoopRolls()
+        {
+            for(int i = 1; i <= TOTAL_FRAMES; i++)
+            {
+                BowlingAttempt();
                 Console.WriteLine($"Frame {i}: Knocked Pins: {KnockedDownPins} Pins Left: {LeftoverPins} Attempt: {Attempts}");
-                CheckerForCertainRolls();
             }
         }
 
@@ -52,7 +62,7 @@
 
         bool IsSpare()
         {
-            if(Attempts == 2 && KnockedDownPins == TOTAL_PINS)
+            if (Attempts == 2 && KnockedDownPins == TOTAL_PINS)
             {
                 return true;
             }
