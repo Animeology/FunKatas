@@ -3,9 +3,9 @@
     public class BowlingGame
     {
         int Attempts;
-        int KnockedDownPins;
         int LeftoverPins = TOTAL_PINS;
-        int Score;
+        public int KnockedDownPins;
+        public int Score;
 
         public void Bowling()
         {
@@ -13,46 +13,43 @@
             DisplayScore();
         }
 
-
-        void BowlingAttempts()
+        public void BowlingAttempts()
         {
             for (int i = 1; i <= TOTAL_FRAMES; i++)
             {
-                Random random = new Random();
-                KnockedDownPins = random.Next(EMPTY_FRAME, Math.Min(LeftoverPins, TOTAL_PINS) + 1);
-
-                LeftoverPins = LeftoverPins - KnockedDownPins;
-                Attempts++;
-
                 if (LeftoverPins == EMPTY_FRAME)
                 {
                     LeftoverPins = TOTAL_PINS;
+                    KnockedDownPins = 0;
                     Attempts = 0;
-                    Console.WriteLine("No more pins");
+                    //Console.WriteLine("No more pins, Resetting frame");
                 }
 
-                if (IsStrike())
-                {
-                    Console.WriteLine("It's a STRIKE!!!");
-                    if(Attempts == 2)
-                    {
-                        Score += KnockedDownPins;
-                    }
-                }
-                else if (IsSpare())
-                {
-                    Console.WriteLine("Spare");
-                    if (Attempts == 3)
-                    {
-                        Score += KnockedDownPins;
-                    }
-                }
+                Random random = new Random();
+                KnockedDownPins = random.Next(EMPTY_FRAME, Math.Min(LeftoverPins, TOTAL_PINS) + 1);
+
+                LeftoverPins -= KnockedDownPins;
+                Attempts++;
 
                 Score += KnockedDownPins;
 
-                Console.WriteLine($"Frame {i}: Knocked Pins: {KnockedDownPins} Pins Left: {LeftoverPins}");
+                Console.WriteLine($"Frame {i}: Knocked Pins: {KnockedDownPins} Pins Left: {LeftoverPins} Attempt: {Attempts}");
+                CheckerForCertainRolls();
             }
         }
+
+        void CheckerForCertainRolls()
+        {
+            if (IsStrike())
+            {
+                Console.WriteLine("It's a STRIKE!!!");
+            }
+            else if (IsSpare())
+            {
+                Console.WriteLine("Spare");
+            }
+        }
+
         bool IsSpare()
         {
             if(Attempts == 2 && KnockedDownPins == TOTAL_PINS)
