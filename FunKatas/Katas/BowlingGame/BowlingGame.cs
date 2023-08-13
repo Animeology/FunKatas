@@ -22,7 +22,7 @@
                     LeftoverPins = TOTAL_PINS;
                     KnockedDownPins = 0;
                     Attempts = 0;
-                    //Console.WriteLine("No more pins, Resetting frame");
+                    Console.WriteLine("No more pins, Resetting frame");
                 }
 
                 Random random = new Random();
