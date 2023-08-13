@@ -3,7 +3,7 @@
     using Katas.Checkout;
     using Katas.Fibonacci;
     using Katas.FizzBuzz;
-    using Katas.String_Calculator;
+    using Katas.StringCalculator;
     using Katas.BowlingGame;
 
     public class Program

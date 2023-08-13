@@ -1,6 +1,6 @@
 ﻿namespace FunKatas.KataTest.StringCalculatorTests
 {
-    using FunKatas.Katas.String_Calculator;
+    using FunKatas.Katas.StringCalculator;
 
     public class StringCalculatorTests
     {
