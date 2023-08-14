@@ -5,6 +5,7 @@
     using Katas.FizzBuzz;
     using Katas.StringCalculator;
     using Katas.BowlingGame;
+    using Katas.WordWarp;
 
     public class Program
     {
@@ -22,8 +23,11 @@
             //StringCalculator calculator = new StringCalculator();
             //calculator.StartCalculator();
 
-            BowlingGame game = new BowlingGame();
-            game.Bowling();
+            //BowlingGame game = new BowlingGame();
+            //game.Bowling();
+
+            string input = "Hello World and Goodbye";
+            Console.WriteLine(Wrapper.WordWrapper(input, 5));
         }
     }
 }
