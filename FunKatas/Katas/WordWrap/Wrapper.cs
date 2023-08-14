@@ -1,4 +1,4 @@
-﻿namespace FunKatas.Katas.WordWarp
+﻿namespace FunKatas.Katas.WordWrap
 {
     public class Wrapper
     {
