@@ -5,7 +5,7 @@
     using Katas.FizzBuzz;
     using Katas.StringCalculator;
     using Katas.BowlingGame;
-    using Katas.WordWarp;
+    using Katas.WordWrap;
 
     public class Program
     {

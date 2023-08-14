@@ -1,7 +1,6 @@
 ﻿namespace FunKatas.Katas.Checkout
 {
-    using FunKatas.KataTest.CheckoutTests;
-    using KataTest;
+    using KataTest.CheckoutTests;
 
     public class CheckoutKata
     {
@@ -65,7 +64,7 @@
         {
             char choice = ' ';
             do
-            {                
+            {
                 Console.WriteLine("Select your items");
                 Console.WriteLine("A");
                 Console.WriteLine("B");

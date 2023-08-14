@@ -1,8 +1,6 @@
-﻿using System.Text.RegularExpressions;
-
-namespace FunKatas.Katas.StringCalculator
+﻿namespace FunKatas.Katas.StringCalculator
 {
-    using FunKatas.KataTest.StringCalculatorTests;
+    using KataTest.StringCalculatorTests;
 
     public class StringCalculator
     {
@@ -22,23 +20,23 @@ namespace FunKatas.Katas.StringCalculator
         public int Add(string nums)
         {
             int sum = 0;
-            string[] numbers = nums.Split(DELIMITER.ToCharArray());   
+            string[] numbers = nums.Split(DELIMITER.ToCharArray());
 
-            if(IsEmptyString(nums))
+            if (IsEmptyString(nums))
             {
                 return sum;
             }
 
-            if(HasDelimiter(nums))
+            if (HasDelimiter(nums))
             {
                 foreach (var num in numbers)
                 {
                     sum += int.Parse(num);
-                    if(!int.TryParse(num, out int parsedNum))
+                    if (!int.TryParse(num, out int parsedNum))
                     {
                         throw new Exception($"Invalid number format: {nums}");
                     }
-                    if(parsedNum < 0)
+                    if (parsedNum < 0)
                     {
                         throw new Exception($"Negatives not allowed: {nums}");
                     }

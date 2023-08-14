@@ -1,6 +1,4 @@
-﻿using System;
-
-namespace FunKatas.Katas.Checkout
+﻿namespace FunKatas.Katas.Checkout
 {
     public class Offer
     {

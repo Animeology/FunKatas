@@ -1,7 +1,7 @@
 ﻿namespace FunKatas.Katas.WordWrap
 {
     public class Wrapper
-    {
+    {        
         public static string WordWrapper(string input, int column)
         {
             if (input.Length <= column)

@@ -1,6 +1,6 @@
 ﻿namespace FunKatas.Katas.Fibonacci
 {
-    using FunKatas.KataTest.FibonacciTests;    
+    using KataTest.FibonacciTests;    
 
     public class Fibonacci
     {

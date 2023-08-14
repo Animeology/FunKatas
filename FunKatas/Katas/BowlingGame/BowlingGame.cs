@@ -1,6 +1,6 @@
 ﻿namespace FunKatas.Katas.BowlingGame
 {
-    using FunKatas.KataTest.BowlingGameTests;
+    using KataTest.BowlingGameTests;
 
     public class BowlingGame
     {
